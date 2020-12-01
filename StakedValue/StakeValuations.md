@@ -25,7 +25,7 @@ Checkmate's article above delves deep into the Realised Value and its very uniqu
 
 ### The Ticket Pool: A Map For Stakeholder Sentiment
 
-Given that the Decred stakeholders lock up coins for up to 142 days to stake, the ticket pool and some of the metrics that can be derived from it can provide clear signals of stakeholder commitment to participate in the governance and security of the network. A good proportion of these metrics are unique to Decred's hybrid consensus and ticketing system, as such cannot be compared on equal footing to any other chain out there.
+Given that the Decred stakeholders lock up coins for up to 142 days to stake, the ticket pool and some of the metrics that can be derived from it can provide clear signals of stakeholder commitment to participate in the governance and security of the network. A good proportion of these metrics are unique to Decred's hybrid consensus and ticketing system, as such, they cannot be compared on equal footing to any other chain out there.
 
 The **Stake Participation** is the simplest form of these metrics, it is calculated as `Ticket Pool Value / Circulating Supply` at any given time. It's easily available as a chart on the [dcrdata.org block explorer](https://explorer.dcrdata.org/charts?chart=stake-participation&zoom=ikd7pc00-khmn2tc0&bin=day&axis=time&visibility=true-false). In simple terms, it's the percentage of supply has been locked in tickets.
 
