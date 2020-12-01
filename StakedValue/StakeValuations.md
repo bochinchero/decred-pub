@@ -2,7 +2,7 @@
 
 ### Background
 
-The following works are the basis for what is described below, consider it prior recommended reading:
+The following works are the basis for the research below, consider it prior recommended reading:
 * [Realised Capitalisation](https://coinmetrics.io/realized-capitalization/) by Nic Carter and Antoine Le Calvez
 * [Realised Cap, MVRV ratio and Gradient Oscillators](https://medium.com/decred/decred-on-chain-realised-cap-mvrv-ratio-and-gradient-oscillators-a36ed2cc8182) by Checkmate.
 *  [Ticket Pool Volume Weighted Average (TVWAP)](https://medium.com/@permabullnino/decred-on-chain-the-ticket-pool-vwap-d0a3d1c42a3) by Permabull Niño.
@@ -84,16 +84,14 @@ The chart below includes the Staked Realised Value alongside the Market Value an
 
 The Staked Realised value behaves very much like the lower band for the Market Value. In sharp sell-offs, the value locked into governance and security of the network acts as the psychological bottom for stakeholders. 
 
-The downside of this metric as a valuation model is that it only accounts for the coins that are in the ticket pool value at a given time, so by definition it will always be considerably below the Market and Realised Value. 
+Using the Staked Realised Value as a basis, two unit price models can be derived:
 
-In order to estimate the collective average DCR price for all of the coins currently locked in the ticket pool, we can calculate the  **Supply-Adjusted Staked Realised Value** (this needs a better name) as`Staked Realised Value * (Circulating Supply / Ticket Pool Value)`. 
+* **Staked Realised Price:** reflecting the cumulative lock-in price for the coins held in the ticket pool at a given time, calculated as `Staked Realised Value / Ticket Pool Value`. 
+* **Locked Stake Price:** indicates the price at which the Market Value would be equal to the Stake Realised Value. This is calculated as `Staked Realised Value / Circulating Supply`. 
+ 
  
 ![Supply Adjusted Staked Realised Value](./6_SupAdjStakeReal.PNG)
 
-The Supply Adjusted Staked Realised Value is an approximation of the Realised Value but focused exclusively on stakeholders. It behaves as a faster moving average to the market value, acting as support in uptrends and resistance in downtrends and sideways action.
+The Stake Realised Price acts as an approximation to the Realised Priced but focused exclusively on the coins entering and leaving the ticket pool. It behaves as a faster moving average to the market value, acting as first line of support in bullish trends and resistance in downtrends and sideways action.  On the other hand, the Locked Stake Price give us the psychological bottom, or point of maximum pain for stakeholders.
 
-Since Decred has only gone through a single market cycle, we lack enough data points to make conclusive statements regarding the relationship between these metrics and how they behave during bull and bear markets. That being said, given the early indications of a new market cycle beginning, these are definitely something to keep an eye on for the next few months.
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzMjY1MTQ4NywtNTMzOTAxMzM1LC0xND
-U2OTM3OTYxLC0yNzE5Njg1OTBdfQ==
--->
+In the previous market cycle, the Stake Realised Price was decisively above the Realised Price for bull market and below it throughout the bear market, That being said, since Decred has only gone through a single market cycle, there are not enough data points to make conclusive statements regarding the relationship between these metrics and how they behave during bull and bear markets. Given the early indications of a new market cycle beginning, these are definitely something to keep an eye on for the next few months.
