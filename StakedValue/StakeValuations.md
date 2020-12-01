@@ -92,6 +92,6 @@ Using the Staked Realised Value as a basis, two unit price models can be derived
  
 ![Supply Adjusted Staked Realised Value](./6_SupAdjStakeReal.PNG)
 
-The Stake Realised Price acts as an approximation to the Realised Priced but focused exclusively on the coins entering and leaving the ticket pool. It behaves as a faster moving average to the market value, acting as first line of support in bullish trends and resistance in downtrends and sideways action.  On the other hand, the Locked Stake Price give us the psychological bottom, a point of maximum pain for stakeholders.
+The Stake Realised Price acts as an approximation to the Realised Priced but focused exclusively on the coins entering and leaving the ticket pool. It behaves as a faster moving average to the market value, a first line of support in bullish trends and resistance in downtrends and sideways action.  On the other hand, the Locked Stake Price give us the psychological bottom, a point of maximum pain for stakeholders when there are sharp drops in Market Value.
 
 In the previous market cycle, the Stake Realised Price was decisively above the Realised Price for the bull market and below it throughout the bear market, That being said, since Decred has only gone through a single market cycle, there are not enough data points to make conclusive statements regarding the relationship between these metrics and how they behave during bull and bear markets. Given the early indications of a new market cycle beginning, these are definitely something to keep an eye on for the next few months.
