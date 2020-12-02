@@ -1,5 +1,7 @@
 # Decred On-Chain: Stake-based Valuation Models
 
+Obvious disclaimer, nothing of what is discussed in this article should be taken as trading or investment advice.
+
 ### Background
 
 The following works are the basis for what is described below, consider it prior recommended reading:
@@ -14,8 +16,7 @@ Defining some of the terms that are referred to throughout the rest of this post
  * **Ticket Pool Size** is the total number of Proof-of-Stake tickets in the Decred network, this size oscillates around 40,960 - which is the a target ticket pool size, a predefined network parameter.
 * **Ticket Pool Value** is the total amount of DCR locked in on tickets. at a given time.
 
-Decred's Proof-of-Stake and ticket-based governance system is the heartbeat of the protocol, it generates a constant flow of coins that, when analysed through already established on-chain metrics, creates a differentiating imprint that makes Decred stand out when compared to other UTXO chains.  
-
+Decred's hybrid Proof-of-Work/Proof-of-Stake and ticket-based governance system is the heartbeat of the protocol, it generates a constant flow of coins that, when analysed through already established on-chain metrics, creates a differentiating imprint that makes Decred stand out when compared to other UTXO chains.  
 
 Checkmate's article above delves deep into the Realised Value and its very unique behaviour when it comes to Decred, it acts as a kind of moving average to the Market Value, acting as support during upward trends and resistance on downward trends.
 
@@ -94,5 +95,5 @@ Using the Staked Realised Value as a basis, two unit price models can be derived
 
 The Stake Realised Price acts as an approximation to the Realised Priced but focused exclusively on the coins entering and leaving the ticket pool. It behaves as a faster moving average to the market value, a first line of support in bullish trends and resistance in downtrends and sideways action.  On the other hand, as described above, the Locked Stake Price is a reflection of the Staked Realised Value and gives us the price at which stakeholders would be in maximum pain.
 
-During Decred's first market cycle, the Stake Realised Price was decisively above the Realised Price throughout the bull market and has stayed below it during nearly all of the bearmarket , the expectation would be to see similiar pattern when the next bull market kicks off in full gear. As such, I'm keeping an eye out for a decisive bullish cross between these two metrics to validate that hypothesis.
+During Decred's first market cycle, the Stake Realised Price was decisively above the Realised Price throughout the bull market and has stayed below it during nearly all of the bear market, the expectation would be to see similiar pattern when the next bull market kicks off in full gear. As such, I'm keeping an eye out for a decisive bullish cross between these two metrics to validate that hypothesis.
 
