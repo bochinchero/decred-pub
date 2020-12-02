@@ -34,7 +34,7 @@ The **Stake Participation** is the simplest form of these metrics, it is calcula
 Since the launch of the network, the stake participation has seen a nearly consistent uptrend, with every higher high and subsequent retracement establishing a new, higher low. The demand to participate in the governance and security of the protocol has not been fazed at all by the bear market over the past two years.
 
 
-| Peak Date | Peak Stake Participation (%) | Bottom Date | Bottom Stake Participation (%) |
+| Peak Date | Peak Stake Participation (%) | Retracement Bottom Date | Retracement Bottom Stake Participation (%) |
 |--|--|--|--|
 |2017-03-29|41.82%|2017-06-30|35.28%|
 |2018-01-17|47.63%|2018-04-03|45.43%|
