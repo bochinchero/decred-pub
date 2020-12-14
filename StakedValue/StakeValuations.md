@@ -85,15 +85,11 @@ The chart below includes the Staked Realised Value alongside the Market Value an
 
 The Staked Realised value behaves very much like the lower band for the Market Value. During sharp sell-offs, the value locked into governance and security of the network has acted as a psychological bottom, the point of maximum pain, where the buyers of last resort step in.
 
-Using the Staked Realised Value as a basis, two unit price models can be derived:
-
-* **Staked Realised Price:** reflecting the cumulative lock-in price for the coins held in the ticket pool at a given time, calculated as `Staked Realised Value / Ticket Pool Value`. 
-* **Locked Stake Price:** indicates the price at which the Market Value would be equal to the Stake Realised Value. This is calculated as `Staked Realised Value / Circulating Supply`. 
- 
- 
+Using the Staked Realised Value as a basis, it's possible to derive a Supply-Adjusted variant that reflects the cumulative lock-in price for the coins held in the ticket pool at a given time, this is calculated as `Staked Realised Value * (Circulating Supply / Ticket Pool Value)`. 
+  
 ![Supply Adjusted Staked Realised Value](./6_SupAdjStakeReal.PNG)
 
-The Stake Realised Price acts as an approximation to the Realised Priced but focused exclusively on the coins entering and leaving the ticket pool. It behaves as a faster moving average to the market value, a first line of support in bullish trends and resistance in downtrends and sideways action.  On the other hand, as described above, the Locked Stake Price is a reflection of the Staked Realised Value and gives us the price at which stakeholders would be in maximum pain.
+The Supply-Adjusted Staked Realised Value acts as an approximation to the Realised Value but focused exclusively on the coins entering and leaving the ticket pool. It behaves as a faster moving average to the market value, a first line of support in bullish trends and resistance in downtrends and sideways action.
 
-During Decred's first market cycle, the Stake Realised Price was decisively above the Realised Price throughout the bull market and has stayed below it during nearly all of the bear market, the expectation would be to see similiar pattern when the next bull market kicks off in full gear. As such, I'm keeping an eye out for a decisive bullish cross between these two metrics to validate that hypothesis.
+During Decred's first market cycle, the Supply-Adjusted Staked Realised Value (really need a better name for this) was decisively above the Realised Value throughout the bull market and has stayed below it during nearly all of the bear market, the expectation would be to see similiar pattern when the next bull market kicks off in full gear - this is something to keep an eye on in the coming weeks.
 
