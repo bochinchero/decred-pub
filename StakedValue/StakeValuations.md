@@ -53,7 +53,7 @@ The main disadvantage of this metric is that it weighs all of the stake at the c
 
 ### Introducing the Staked Realised Value
 
-The Staked Realised Value is an attempt at a more accurate valuation based on stakeholder sentiment, it's defined as the valuation of the ticket pool, measured by cost of every ticket on the day it was purchased and added to the pool.
+The Staked Realised Value is an attempt at a more accurate valuation based on stakeholder sentiment, it's defined as the valuation of the ticket pool, measured by cost of every ticket on the day it was purchased and added to the pool. It is an analogy of the Realised Value but applied exclusively to tickets, treating every ticket as a UTXO.
 
 Assuming a hypothetical case where there are no tickets live on the network and three are purchased in consecutive days, voting a few days later in the same order:
 
