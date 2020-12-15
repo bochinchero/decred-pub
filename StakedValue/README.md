@@ -97,6 +97,6 @@ The relationship between the Realised Value and the Supply-Adjusted Staked Reali
 
 During the past market cycle, the SASRV/RV ratio remained above 1 throughout the entirety of the bull market, while during the bear market it has struggled to decisevely break and sustain above that value. Despite this metric crossing bullish again, I'd like to see a much stronger breakout to the upside as confirmation of what looks like an upcoming bull market kicking into full gear - something to keep an eye on over the next few weeks.
 
-## In Closing
+### In Closing
 
-While DCR is relatively nascent as a tradeable asset, with a single market cycle under it's belt, the data available so far makes a compelling case to dive deeper into the on-chian behaviour that is unique to the hybrid PoW/PoS consensus. The metrics described above are complementary valuation tools to other existing and well-established heuristics, enabling the gauging of key psychological levels for stakeholders - who are, after all, the largest key players in the protocol.
+While DCR is relatively nascent as a tradeable asset, with a single market cycle under it's belt, the data available so far makes a compelling case to dive deeper into the on-chian behaviour that is unique to the hybrid PoW/PoS consensus. The Staked Realised Value and its supply-adjusted variant are complementary valuation tools to other existing and well-established heuristics, quantifying key psychological levels for stakeholders - who are, after all, the largest key players in the protocol.
