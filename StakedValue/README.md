@@ -91,8 +91,12 @@ Using the Staked Realised Value as a basis, it's possible to derive a Supply-Adj
 
 The **Supply-Adjusted Staked Realised Value** behaves as a faster moving average than the Realised Value to the Market Value, a first line of support in bullish trends and first line of resistance in downtrends and sideways action.
 
-The relationship between the Realised Value and the Supply-Adjusted Staked Realised Value also seenms to provide a lagging indicator of the direction that the market is trending, this is better visualised by constructing an oscilator based on the ratio between these two metrics. The **SASRVRV ratio** is calculated as `Supply-Adjusted Staked Realised Value / Realised Value`. 
+The relationship between the Realised Value and the Supply-Adjusted Staked Realised Value also seenms to provide a lagging indicator of the direction that the market is trending, this is better visualised by constructing an oscilator based on the ratio between these two metrics. The **SASRV/RV Ratio** is calculated as `Supply-Adjusted Staked Realised Value / Realised Value`. 
 
 ![SASRVRV Ratio](./img/7_SASRVRV.png)
 
-During the past market cycle, the SASRV/RV ratio remained above 1 throughout the entirety of the bull market, while during the bear market it has struggled to decisevely break and sustain above that value. While this metric has just crossed bullish again, I'd like to see a strong breakout to the upside as confirmation of what looks like an upcoming bull market kicking into full gear - something to keep an eye on over the next few weeks.
+During the past market cycle, the SASRV/RV ratio remained above 1 throughout the entirety of the bull market, while during the bear market it has struggled to decisevely break and sustain above that value. Despite this metric crossing bullish again, I'd like to see a much stronger breakout to the upside as confirmation of what looks like an upcoming bull market kicking into full gear - something to keep an eye on over the next few weeks.
+
+### Summary
+
+While DCR is relatively nascent as a tradeable asset, with a single market cycle under it's belt, the data available so far makes a compelling case to dive deeper into the on-chian behaviour that is unique to the hybrid PoW/PoS consensus. The Staked Realised Value and it's supply-adjusted variant are complementary valuation tools to other existing metrics, enabling the gauging of key psychological levels for stakeholders - who are, after all, the largest key players in the protocol.
