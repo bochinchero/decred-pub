@@ -95,6 +95,4 @@ The relationship between the Realised Value and the Supply-Adjusted Staked Reali
 
 ![SASRVRV Ratio](./img/7_SASRVRV.png)
 
-During the past market cycle, the SASRV/RV ratio remained above 1 throughout the entirety of the bull market, but during the bear market it has struggled to decisevely break and sustain above that value.
-
-Since Decred has only gone through a single bull/bear market cycle, what is discussed above are hypotheses based on the limited data points available. That being said, it's worth keeping an eye on these metrics as this new cycle develops to understand if the initial observations made around them are correct.
+During the past market cycle, the SASRV/RV ratio remained above 1 throughout the entirety of the bull market, but during the bear market it has struggled to decisevely break and sustain above that value. Given that Decred has only had a single market cycle, limiting the amount of data points available, we can only hypothethise that this metric will once again have a strong breakout above 1 when the next bull market kicks into full gear - something to keep an eye on over the next few weeks.
