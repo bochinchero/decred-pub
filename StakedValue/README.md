@@ -91,8 +91,10 @@ Using the Staked Realised Value as a basis, it's possible to derive a Supply-Adj
 
 The **Supply-Adjusted Staked Realised Value** behaves as a faster moving average than the Realised Value to the Market Value, a first line of support in bullish trends and first line of resistance in downtrends and sideways action.
 
-The relationship between the Realised Value and the Supply-Adjusted Staked Realised Value also seenms to provide an indication of the market trend, this is better visualised by constructing an oscilator based on the ratio between these two metrics. The **SASRVRV ratio** is calculated as `Supply-Adjusted Staked Realised Value / Realised Value`. 
+The relationship between the Realised Value and the Supply-Adjusted Staked Realised Value also seenms to provide a lagging indicator of the direction that the market is trending, this is better visualised by constructing an oscilator based on the ratio between these two metrics. The **SASRVRV ratio** is calculated as `Supply-Adjusted Staked Realised Value / Realised Value`. 
 
 ![SASRVRV Ratio](./img/7_SASRVRV.png)
 
-During the past market cycle, the SASRV/RV ratio remained above 1 throughout the entirety of the bull market, but during the bear market it has struggled to decisevely break and sustain above that value. Given that Decred has only had a single market cycle, limiting the amount of data points available, we can only hypothethise that this metric will once again have a strong breakout above 1 when the next bull market kicks into full gear - something to keep an eye on over the next few weeks.
+During the past market cycle, the SASRV/RV ratio remained above 1 throughout the entirety of the bull market, while during the bear market it has struggled to decisevely break and sustain above that value. While this metric has just crossed bullish again, I'd like to see a strong breakout to the upside as confirmation of what looks like an upcoming bull market kicking into full gear - something to keep an eye on over the next few weeks.
+
+GIven that DCR is a relatively nascent asset, with only a single market cycle under it's belt, I think it's important to highlight that a lot of what is discussed above regarding these metrics are mere hypotheses based on the available data - the real test will come as the next market cycle develops and these are proven out. 
