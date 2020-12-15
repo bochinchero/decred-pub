@@ -21,7 +21,7 @@ Decred's hybrid Proof-of-Work/Proof-of-Stake and ticket-based governance system 
 Checkmate's article above delves deep into the Realised Value and its very unique behaviour when it comes to Decred, it acts as a kind of moving average to the Market Value, acting as support during upward trends and resistance on downward trends.
 
 
-![Realised Value](./1_RealisedCap.PNG)
+![Realised Value](./img/1_RealisedCap.PNG)
 
 
 ### The Ticket Pool: A Map For Stakeholder Sentiment
@@ -30,7 +30,7 @@ Given that the Decred stakeholders lock up coins for up to 142 days to stake, th
 
 The **Stake Participation** is the simplest form of these metrics, it is calculated as `Ticket Pool Value / Circulating Supply` at any given time. It's easily available as a chart on the [dcrdata.org block explorer](https://explorer.dcrdata.org/charts?chart=stake-participation&zoom=ikd7pc00-khmn2tc0&bin=day&axis=time&visibility=true-false). In simple terms, it's the percentage of supply has been locked in tickets.
 
-![Stake Participation](./3_StakedSupply.PNG)
+![Stake Participation](./img/3_StakedSupply.PNG)
 
 Since the launch of the network, the stake participation has seen a nearly consistent uptrend, with every higher high and subsequent retracement establishing a new, higher low. The demand to participate in the governance and security of the protocol has not been fazed at all by the bear market over the past two years.
 
@@ -44,7 +44,7 @@ Since the launch of the network, the stake participation has seen a nearly consi
 
 Going a step further, we can take a first stab at establishing a metric that measures valuation from the stakeholder sentiment point of view via the **Staked Market Value**, which is calculated as the `Ticket Pool Value * Latest Market Price`.
 
-![Staked Market Value](./4_StakeValue.PNG)
+![Staked Market Value](./img/4_StakeValue.PNG)
 
 This metric gives us the current valuation of all the DCR in the ticket pool at a given time. It's an analogy to the Total Value Locked (TVL) in the decentralised finance space, a concise indicator of the current value of the capital that's been put at stake to participate in the network while earning yield.
 
@@ -53,7 +53,7 @@ The main disadvantage of this metric is that it weighs all of the stake at the c
 
 ### Introducing the Staked Realised Value
 
-The Staked Realised Value is an attempt at a more accurate valuation based on stakeholder sentiment, it's defined as the valuation of the ticket pool, measured by cost of every ticket on the day it was purchased and added to the pool. It is an analogy of the Realised Value but applied exclusively to tickets, treating every ticket as a UTXO.
+The Staked Realised Value is an attempt at a more accurate valuation based on stakeholder sentiment, it's defined as the valuation of the ticket pool, measured by cost of every ticket on the day it was purchased and added to the pool. It is analogous to the Realised Value but applied exclusively to tickets, treating every ticket as a UTXO.
 
 Assuming a hypothetical case where there are no tickets live on the network and three are purchased in consecutive days, voting a few days later in the same order:
 
@@ -81,15 +81,20 @@ Even as the DCR/USD price rises tenfold between Day 1 and Day 4, the Staked Real
 
 The chart below includes the Staked Realised Value alongside the Market Value and Realised Value.
 
-![Staked Realised Value](./5_StakeRealisedValue.PNG)
+![Staked Realised Value](./img/5_StakeRealisedValue.PNG)
 
 The Staked Realised value behaves very much like the lower band for the Market Value. During sharp sell-offs, the value locked into governance and security of the network has acted as a psychological bottom, the point of maximum pain, where the buyers of last resort step in.
 
 Using the Staked Realised Value as a basis, it's possible to derive a Supply-Adjusted variant that reflects the cumulative lock-in price for the coins held in the ticket pool at a given time, this is calculated as `Staked Realised Value * (Circulating Supply / Ticket Pool Value)`. 
   
-![Supply Adjusted Staked Realised Value](./6_SupAdjStakeReal.PNG)
+![Supply Adjusted Staked Realised Value](./img/6_SupAdjStakeReal.PNG)
 
-The Supply-Adjusted Staked Realised Value acts as an approximation to the Realised Value but focused exclusively on the coins entering and leaving the ticket pool. It behaves as a faster moving average to the market value, a first line of support in bullish trends and resistance in downtrends and sideways action.
+The **Supply-Adjusted Staked Realised Value** behaves as a faster moving average than the Realised Value to the Market Value, a first line of support in bullish trends and first line of resistance in downtrends and sideways action.
 
-During Decred's first market cycle, the Supply-Adjusted Staked Realised Value (really need a better name for this) was decisively above the Realised Value throughout the bull market and has stayed below it during nearly all of the bear market, the expectation would be to see similiar pattern when the next bull market kicks off in full gear - this is something to keep an eye on in the coming weeks.
+The relationship between the Realised Value and the Supply-Adjusted Staked Realised Value also seenms to provide an indication of the market trend, this is better visualised by constructing an oscilator based on the ratio between these two metrics. The **SASRVRV ratio** is calculated as `Supply-Adjusted Staked Realised Value / Realised Value`. 
 
+![SASRVRV Ratio](./img/7_SASRVRV.png)
+
+During the past market cycle, the SASRV/RV ratio remained above 1 throughout the entirety of the bull market, but during the bear market it has struggled to decisevely break and sustain above that value.
+
+Since Decred has only gone through a single bull/bear market cycle, what is discussed above are hypotheses based on the limited data points available. That being said, it's worth keeping an eye on these metrics as this new cycle develops to understand if the initial observations made around them are correct.
