@@ -11,10 +11,10 @@ The following works are the basis for what is described below, consider it prior
 
 Defining some of the terms that are referred to throughout the rest of this post:
 
-* **Market Value** or market capitalisation the traditional means of valuation in legacy finance, widely used as a metric for cryptocurrencies, it's calculated as `circulating supply * latest market price`.
+* **Market Value** or market capitalisation is the traditional means of valuation in legacy finance - widely used as a metric for cryptocurrencies, it's calculated as `circulating supply * latest market price`.
 * **Realised Value** is a valuation metric based on the cumulative sum of the price of each UTXO when it last moved.
- * **Ticket Pool Size** is the total number of Proof-of-Stake tickets in the Decred network, this size oscillates around 40,960 - which is the a target ticket pool size, a predefined network parameter.
-* **Ticket Pool Value** is the total amount of DCR locked in on tickets. at a given time.
+ * **Ticket Pool Size** is the total number of Proof-of-Stake tickets in the Decred network, this size oscillates around 40,960 - which is the target ticket pool size, a predefined network parameter.
+* **Ticket Pool Value** is the total amount of DCR locked in tickets, at a given time.
 
 Decred's hybrid Proof-of-Work/Proof-of-Stake and ticket-based governance system is the heartbeat of the protocol, it generates a constant flow of coins that, when analysed through already established on-chain metrics, creates a differentiating imprint that makes Decred stand out when compared to other UTXO chains.  
 
@@ -55,7 +55,7 @@ The main disadvantage of this metric is that it weighs all of the stake at the c
 
 The Staked Realised Value is an attempt at a more accurate valuation based on stakeholder sentiment, it's defined as the valuation of the ticket pool, measured by cost of every ticket on the day it was purchased and added to the pool. It is analogous to the Realised Value but applied exclusively to tickets, treating every ticket as a UTXO.
 
-Assuming a hypothetical case where there are no tickets live on the network and three are purchased in consecutive days, voting a few days later in the same order:
+Assuming a hypothetical case where there are no tickets live on the network and three are purchased on consecutive days, voting a few days later in the same order:
 
 | Ticket ID |Date Purchased  | Ticket Price (DCR)  |   Date Voted |
 |--|--|--|--|
@@ -91,7 +91,7 @@ Using the Staked Realised Value as a basis, it's possible to derive a Supply-Adj
 
 The **Supply-Adjusted Staked Realised Value** behaves as a faster moving average than the Realised Value to the Market Value, a first line of support in bullish trends and first line of resistance in downtrends and sideways action.
 
-The relationship between the Realised Value and the Supply-Adjusted Staked Realised Value also seenms to provide a lagging indicator of the direction that the market is trending, this is better visualised by constructing an oscilator based on the ratio between these two metrics. The **SASRV/RV Ratio** is calculated as `Supply-Adjusted Staked Realised Value / Realised Value`. 
+The relationship between the Realised Value and the Supply-Adjusted Staked Realised Value also seems to provide a lagging indicator of the direction that the market is trending, this is better visualised by constructing an oscilator based on the ratio between these two metrics. The **SASRV/RV Ratio** is calculated as `Supply-Adjusted Staked Realised Value / Realised Value`. 
 
 ![SASRVRV Ratio](./img/7_SASRVRV.png)
 
