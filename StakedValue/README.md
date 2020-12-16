@@ -21,7 +21,7 @@ Decred's hybrid Proof-of-Work/Proof-of-Stake and ticket-based governance system 
 Checkmate's article above delves deep into the Realised Value and its very unique behaviour when it comes to Decred, it acts as a kind of moving average to the Market Value, acting as support during upward trends and resistance on downward trends.
 
 
-![Realised Value](./img/1_RealisedCap.PNG)
+![Realised Value](https://github.com/bochinchero/decred-pub/blob/main/StakedValue/img/1_RealisedCap.PNG)
 
 
 ### The Ticket Pool: A Map For Stakeholder Sentiment
