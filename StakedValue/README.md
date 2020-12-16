@@ -30,7 +30,7 @@ Given that the Decred stakeholders lock up coins for up to 142 days to stake, th
 
 The **Stake Participation** is the simplest form of these metrics, it is calculated as `Ticket Pool Value / Circulating Supply` at any given time. It's easily available as a chart on the [dcrdata.org block explorer](https://explorer.dcrdata.org/charts?chart=stake-participation&zoom=ikd7pc00-khmn2tc0&bin=day&axis=time&visibility=true-false). In simple terms, it's the percentage of supply has been locked in tickets.
 
-![Stake Participation](./img/3_StakedSupply.PNG)
+![Stake Participation](https://github.com/bochinchero/decred-pub/blob/main/StakedValue/img/3_StakedSupply.PNG)
 
 Since the launch of the network, the stake participation has seen a nearly consistent uptrend, with every higher high and subsequent retracement establishing a new, higher low. The demand to participate in the governance and security of the protocol has not been fazed at all by the bear market over the past two years.
 
@@ -44,7 +44,7 @@ Since the launch of the network, the stake participation has seen a nearly consi
 
 Going a step further, we can take a first stab at establishing a metric that measures valuation from the stakeholder sentiment point of view via the **Staked Market Value**, which is calculated as the `Ticket Pool Value * Latest Market Price`.
 
-![Staked Market Value](./img/4_StakeValue.PNG)
+![Staked Market Value](https://github.com/bochinchero/decred-pub/blob/main/StakedValue/img/4_StakeValue.PNG)
 
 This metric gives us the current valuation of all the DCR in the ticket pool at a given time. It's an analogy to the Total Value Locked (TVL) in the decentralised finance space, a concise indicator of the current value of the capital that's been put at stake to participate in the network while earning yield.
 
@@ -81,19 +81,19 @@ Even as the DCR/USD price rises tenfold between Day 1 and Day 4, the Staked Real
 
 The chart below includes the Staked Realised Value alongside the Market Value and Realised Value.
 
-![Staked Realised Value](./img/5_StakeRealisedValue.PNG)
+![Staked Realised Value](https://github.com/bochinchero/decred-pub/blob/main/StakedValue/img/5_StakeRealisedValue.PNG)
 
 The Staked Realised value behaves very much like the lower band for the Market Value. During sharp sell-offs, the value locked into governance and security of the network has acted as a psychological bottom, the point of maximum pain, where the buyers of last resort step in.
 
 Using the Staked Realised Value as a basis, it's possible to derive a Supply-Adjusted variant that reflects the cumulative lock-in price for the coins held in the ticket pool at a given time, this is calculated as `Staked Realised Value * (Circulating Supply / Ticket Pool Value)`. 
   
-![Supply Adjusted Staked Realised Value](./img/6_SupAdjStakeReal.PNG)
+![Supply Adjusted Staked Realised Value](https://github.com/bochinchero/decred-pub/blob/main/StakedValue/img/6_SupAdjStakeReal.PNG)
 
 The **Supply-Adjusted Staked Realised Value** behaves as a faster moving average than the Realised Value to the Market Value, a first line of support in bullish trends and first line of resistance in downtrends and sideways action.
 
 The relationship between the Realised Value and the Supply-Adjusted Staked Realised Value also seems to provide a lagging indicator of the direction that the market is trending, this is better visualised by constructing an oscilator based on the ratio between these two metrics. The **SASRV/RV Ratio** is calculated as `Supply-Adjusted Staked Realised Value / Realised Value`. 
 
-![SASRVRV Ratio](./img/7_SASRVRV.png)
+![SASRVRV Ratio](https://github.com/bochinchero/decred-pub/blob/main/StakedValue/img/7_SASRVRV.png)
 
 During the past market cycle, the SASRV/RV ratio remained above 1 throughout the entirety of the bull market, while during the bear market it has struggled to decisevely break and sustain itself above that value. Despite this metric crossing bullish again, I'd like to see a much stronger breakout to the upside as confirmation of what looks like an upcoming bull market kicking into full gear - something to keep an eye on over the next few weeks.
 
