@@ -1,6 +1,9 @@
 This guide assumes you already have a linux host and access to a terminal.
 
 Keep in mind that if you want your node to be a public routing node you'll need to have the p2p listening port open, by default this is 9735.
+You could also make the dcrd node public by opening port 9108.
+
+It's also recommended that your host has a swap partition set up
 
 ## Decred Installation
 
@@ -33,7 +36,7 @@ The dcrd full node needs to have the **txindex** option enabled, so modify the d
 
 	nano ~/.dcrd/dcrd.conf
 
-The configuration file has a lot of settings, scroll down to **Optional Indexes** section and uncomment (remove the ;) following setting:
+Scroll down to **Optional Indexes** section and uncomment (remove the ;) following setting:
    
 	; Build and maintain a full hash-based transaction index which makes all
 	; transactions available via the getrawtransaction RPC.
