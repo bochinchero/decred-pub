@@ -1,8 +1,6 @@
+This guide assumes you already have a linux host and access to a terminal.
 
-
-Create a VPS 
-
-SSH into it.
+Keep in mind that if you want your node to be a public routing node you'll need to have the p2p listening port open, by default this is 9735.
 
 ## Decred Installation
 
@@ -12,15 +10,15 @@ First lets go to your home folder:
 
 Get latest version of dcrinstall
 
-    wget https://github.com/decred/decred-release/releases/download/v1.6.0-rc1/dcrinstall-linux-amd64-v1.6.0-rc1
+    wget https://github.com/decred/decred-release/releases/download/v1.6.0/dcrinstall-linux-amd64-v1.6.0
 
 change permissions to executable:
 
-	chmod +x dcrinstall-linux-amd64-v1.6.0-rc1
+	chmod +x dcrinstall-linux-amd64-v1.6.0
 
 execute dcrinstall
 
-	./dcrinstall-linux-amd64-v1.6.0-rc1
+	./dcrinstall-linux-amd64-v1.6.0
 
 this will download dcrd, dcrwallet and dcrlnd - as part of the process it will also create a new wallet within dcrwallet and generate the seed words, write these down and store somewhere safe, you will get the following prompt:
 
@@ -37,7 +35,10 @@ The dcrd full node needs to have the **txindex** option enabled, so modify the d
 
 The configuration file has a lot of settings, scroll down to **Optional Indexes** section and uncomment (remove the ;) following setting:
    
-    txindex=1
+	; Build and maintain a full hash-based transaction index which makes all
+	; transactions available via the getrawtransaction RPC.
+	txindex=1
+
 
 Save the configuration file by presssing **CTRL + X**, then **Y**, then **Enter**.
 
@@ -47,29 +48,15 @@ I like to use tmux to have different consoles within a single ssh session, you c
 
 	tmux new -s dcrd
 
-this will give you a brand new terminal that you can check when needed, now go to the decred folder that was created by dcrinstall
+this will give you a brand new terminal that you can check when needed, now you can start dcrd:
 
-	cd ~/decred
-
-and start up dcrd:
-
-	./dcrd
+	~/decred/dcrd
 
 At this point the decred blockchain will start downloading and the node will be synchronising, this process usually takes a few hours depending on the hardware/broadband speed.
 
 You can detach from the tmux session by pressing **CTRL+B**, then **D**. If you need to check back in to see the status of the node you can reattach the session by using the following command:
 
 	tmux attach-session -t dcrd
-
-I like to create an alias to simplify this:
-
-	alias tmux_dcrd="tmux attach-session -t dcrd"
-
-Afterwards, you should be able to attach the session by just entering the following command:
-
-	tmux_dcrd
-
-As before, get back to your main terminal by pressing **CTRL+B**, then **D**.
 
 To know if your node has fully synched, look at the 'height' in the last message in the dcrd session and compare against the latest block on dcrdata.org.
 
@@ -92,8 +79,10 @@ In my case, I'm want this node to be public and it will be running off of a VPS 
 
 You can also modify further down the alias of the node and the colour that it will be displayed in.
 
-If your intention is to use Ride The Lightning, you will also need to enable listening for gRPC connections:
+If plan on using Ride The Lightning to manage your node, you will also need to enable listening for REST connections:
 
+	; All ipv4 interfaces on port 8080:
+	restlisten=localhost:8080
 
 ### Running
 
@@ -101,17 +90,13 @@ Create a new tmux session or open a new terminal for dcrlnd
 	 
 	 tmux new -s dcrlnd
 
-now go to the decred folder that was created by dcrinstall
+now you can start dcrlnd:
+	
+	~/decred/dcrlnd
 
-	cd ~/decred
+You will be promptedforwarded to create and unlock the wallet:
 
-and start up dcrd:
-
-	./dcrlnd
-
-You will be prompted to create and unlock the wallet:
-
-	2020-10-24 09:09:11.188 [INF] LTND: Waiting for wallet encryption password. Use `dcrlncli create` to create a wallet, `dcrlncli unlock` to unlock an existing wallet, or `dcrlncli changepassword` to change the password of an existing wallet and unlock it.
+	LTND: Waiting for wallet encryption password. Use `dcrlncli create` to create a wallet, `dcrlncli unlock` to unlock an existing wallet, or `dcrlncli changepassword` to change the password of an existing wallet and unlock it.
 
 Detach from the session by pressing **CTRL+B**, then **D**. 
 
@@ -119,11 +104,11 @@ The next step is to use dcrlncli to create a wallet, this will be your main wall
 
 	~/decred/dcrlncli create
 
-For those of you using tmux, you can create an alias to call the dcrlnd session:
+Go back to the dcrlnd terminal by attaching the session:
 
-	alias tmux_dcrlnd="tmux attach -t dcrlnd"
+	 tmux attach -t dcrlnd
 
-Go back to the dcrlnd terminal, and you will now see it updating and synchronising. Once fully synchronised you'll be ready to start funding the wallet and opening channels.
+You will now see it updating and synchronising. Once fully synchronised you'll be ready to start funding the wallet and opening channels.
 
 ### Command line usage
 
@@ -139,11 +124,15 @@ check your balance:
 
 and send coins to another wallet:
 
-	~/decred/dcrlncli sendcoins <address> <amount>
+	~/decred/dcrlncli sendcoins < address > < amount >
 
 connect to an online node:
 
-	~/decred/dcrlncli connect <node address>
+	~/decred/dcrlncli connect <node pubkey @ address : port >
+	
+open a channel:
+
+	~/decred/dcrlncli openchannel < node pubkey > < amount >
 
 ## Ride the Lightning
 
@@ -153,7 +142,7 @@ An obvious disclaimer here, RTL is developed for Bitcoin. However given that dcr
 * Adding peers ✅
 * Closing channels ✅
 * Receiving mainnet coins - this probably will need tweaking as RTL has bech32 option and you can't disable it.
-* Sending mainnet coins
+* Sending mainnet coins ✅
 *  Sending LN payments
 *  Creating LN invoice
  
@@ -172,12 +161,12 @@ We also need to ensure we have g++:
 
 	sudo apt-get install -y build-essential
 
-Once completed we do a pull from the RTL repository:
+Once completed, go back to your home folder and pull from the RTL repository:
 
 	cd ~
 	git clone https://github.com/Ride-The-Lightning/RTL.git
 
-Then browse into the RTL folder and install:
+Then go into the RTL folder and install:
 	
 	cd RTL
 	npm install --only=prod
