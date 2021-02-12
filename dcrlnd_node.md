@@ -1,9 +1,15 @@
 This guide assumes you already have a linux host and access to a terminal.
 
-Keep in mind that if you want your node to be a public routing node you'll need to have the p2p listening port open, by default this is 9735.
+Keep in mind that if you want your node to be a public routing node you'll need to open the dcrlnd p2p listening port, by default this is 9735.
 You could also make the dcrd node public by opening port 9108.
 
-It's also recommended that your host has a swap partition set up
+It is also recommended that your host has at least a 2G swap partition set up.
+
+Some additional information on security and safety:
+
+* [How to harden SSH in Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-harden-openssh-on-ubuntu-18-04)
+* [How to setup a firewall with ufw in Ubuntu & Debian](https://www.digitalocean.com/community/tutorials/how-to-setup-a-firewall-with-ufw-on-an-ubuntu-and-debian-cloud-server)
+* [dclrnd safety guideliens](https://github.com/decred/dcrlnd/blob/master/docs/safety.md)
 
 ## Decred Installation
 
@@ -11,11 +17,15 @@ First lets go to your home folder:
 
 	cd ~
 
-Get latest version of dcrinstall
+Get latest version of dcrinstall - if you are using an VPS/VM that would ussually be:
+    	
+	wget https://github.com/decred/decred-release/releases/download/v1.6.0/dcrinstall-linux-amd64-v1.6.0
 
-    wget https://github.com/decred/decred-release/releases/download/v1.6.0/dcrinstall-linux-amd64-v1.6.0
+For a raspberry pi you would use:
 
-change permissions to executable:
+	wget https://github.com/decred/decred-release/releases/download/v1.6.0/dcrinstall-linux-arm-v1.6.0
+
+Change permissions to executable:
 
 	chmod +x dcrinstall-linux-amd64-v1.6.0
 
@@ -23,11 +33,7 @@ execute dcrinstall
 
 	./dcrinstall-linux-amd64-v1.6.0
 
-this will download dcrd, dcrwallet and dcrlnd - as part of the process it will also create a new wallet within dcrwallet and generate the seed words, write these down and store somewhere safe, you will get the following prompt:
-
-	Once you have stored the seed in a safe and secure location, enter "OK" to continue:
-
-dcrd, dcrwallet and dcrlnd have now been installed.
+This will download dcrd, dcrwallet and dcrlnd - as part of the process it will also create a new wallet within dcrwallet and generate the seed phrase, although this is not the  wallet you will be using for your routing node (as dcrlnd creates a separate one).
 
 ## Decred Full Node
 ### Configuration
@@ -71,7 +77,8 @@ Settings for your dcrlnd node can be modified by opening up the dcrlnd.conf with
 
 	nano ~/.dcrlnd/dcrlnd.conf
 
-In my case, I'm want this node to be public and it will be running off of a VPS with a static ip address, and I want to make it public, so I can modify the following setting:
+In my case, I want this node to be public and it will be running on a VPS with a static ip address. 
+The following setting needs to be modified:
 
 	; Adding an external IP will advertise your node to the network. This signals
 	; that your node is available to accept incoming channels. If you don't wish to
@@ -80,9 +87,9 @@ In my case, I'm want this node to be public and it will be running off of a VPS 
 	; address.
 	 externalip=<enter your address here>
 
-You can also modify further down the alias of the node and the colour that it will be displayed in.
+Further down, you can also modify the alias of the node and the colour that it will be displayed in on explorers.
 
-If plan on using Ride The Lightning to manage your node, you will also need to enable listening for REST connections:
+If you plan on running Ride The Lightning on the same host to manage your node, you will also need to enable listening for REST connections:
 
 	; All ipv4 interfaces on port 8080:
 	restlisten=localhost:8080
@@ -113,6 +120,9 @@ Go back to the dcrlnd terminal by attaching the session:
 
 You will now see it updating and synchronising. Once fully synchronised you'll be ready to start funding the wallet and opening channels.
 
+As of 1.6.0 there is no seeder for dcrlnd, so you won't be connected on the network until you add a peer
+
+
 ### Command line usage
 
 At this stage you're basically set to start
@@ -136,6 +146,7 @@ connect to an online node:
 open a channel:
 
 	~/decred/dcrlncli openchannel < node pubkey > < amount >
+
 
 ## Ride the Lightning
 
