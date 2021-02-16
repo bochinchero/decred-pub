@@ -31,63 +31,98 @@ Open a terminal window by pressing **Ctrl + Alt + T**
 
 Import the Decred Release Signing Key in GnuPG.
 
-`gpg --keyserver pgp.mit.edu --recv-keys F516ADB7A069852C7C28A02D6D897EDF518A031D`
+    gpg --keyserver pgp.mit.edu --recv-keys F516ADB7A069852C7C28A02D6D897EDF518A031D
 
-Download the installer, manifest, and signature files. If you are using a Raspberry Pi, you'll need the arm64 files instead.
+### If you are using a dedicated computer or a virtual machine (amd64)
 
-`wget https://github.com/decred/decred-release/releases/download/v1.6.0/{dcrinstall-linux-amd64-v1.6.0,dcrinstall-v1.6.0-manifest.txt,dcrinstall-v1.6.0-manifest.txt.asc}`
+Download the installer, manifest, and signature files.
+
+    wget https://github.com/decred/decred-release/releases/download/v1.6.0/{dcrinstall-linux-amd64-v1.6.0,dcrinstall-v1.6.0-manifest.txt,dcrinstall-v1.6.0-manifest.txt.asc}
 
 Verify the manifest. The output from this command should say “Good signature from Decred Release [**release@decred.org**](mailto:release@decred.org)”. Warnings about the key not being certified with a trusted signature can be ignored.
 
-`gpg --verify dcrinstall-v1.6.0-manifest.txt.asc`
+    gpg --verify dcrinstall-v1.6.0-manifest.txt.asc
 
 Verify the SHA-256 hash in the manifest matches that of the binary - the following two commands should have the same output.
 
-`sha256sum dcrinstall-linux-amd64-v1.6.0`
+    sha256sum dcrinstall-linux-amd64-v1.6.0
 
-`grep dcrinstall-linux-amd64-v1.6.0 dcrinstall-v1.6.0-manifest.txt`
+    grep dcrinstall-linux-amd64-v1.6.0 dcrinstall-v1.6.0-manifest.txt
 
 Make the binary executable.
 
-`chmod +x dcrinstall-linux-amd64-v1.6.0`
+    chmod +x dcrinstall-linux-amd64-v1.6.0
 
 Run it to install the Decred CLI tools, the DEX client and create your Decred wallet.
 
-`./dcrinstall-linux-amd64-v1.6.0 --dcrdex`
+    ./dcrinstall-linux-amd64-v1.6.0 --dcrdex
+
+#### If you are using a Raspberry Pi (arm64)
+
+Download the installer, manifest, and signature files.
+
+    wget https://github.com/decred/decred-release/releases/download/v1.6.0/{dcrinstall-linux-arm64-v1.6.0,dcrinstall-v1.6.0-manifest.txt,dcrinstall-v1.6.0-manifest.txt.asc}
+
+Verify the manifest. The output from this command should say “Good signature from Decred Release [**release@decred.org**](mailto:release@decred.org)”. Warnings about the key not being certified with a trusted signature can be ignored.
+
+    gpg --verify dcrinstall-v1.6.0-manifest.txt.asc
+
+Verify the SHA-256 hash in the manifest matches that of the binary - the following two commands should have the same output.
+
+    sha256sum dcrinstall-linux-arm64-v1.6.0
+
+    grep dcrinstall-linux-arm64-v1.6.0 dcrinstall-v1.6.0-manifest.txt
+
+Make the binary executable.
+
+    chmod +x dcrinstall-linux-arm64-v1.6.0
+
+Run it to install the Decred CLI tools, the DEX client and create your Decred wallet.
+
+    ./dcrinstall-linux-arm64-v1.6.0 --dcrdex
+
 
 As part of the wallet creation process, you will be given a sequence of 33 words known as a seed phrase. Write it down and store it in a safe place and **DO NOT SHARE IT WITH ANYONE**. For more information see the [Wallets & Seeds](https://docs.decred.org/faq/wallets-and-seeds/) section of the Decred documentation.
 
 Add the path to the Decred binaries to your `.profile` for easier management.
 
-`echo "PATH=~/decred:$PATH" >> ~/.profile && source ~/.profile`
+    echo "PATH=~/decred:$PATH" >> ~/.profile && source ~/.profile
 
 ## Configuration
 
-To make life easier, we can use tmux to manage multiple terminal sessions - first, lets verify that you have it installed.
+To make life easier, you can use tmux to manage multiple terminal sessions - first, lets verify that you have it installed.
 
-`sudo apt-get install tmux`
+    sudo apt-get install tmux
 
 Now we'll create a bash script called dcrdex.sh which will start a tmux session for each application, starting dcrd, bitcoind, dcrwallet and dexc.
 
-`echo "tmux new -d -s dcrd 'dcrd'; tmux new -d -s dcrwallet 'dcrwallet'; tmux new -d -s bitcoind 'bitcoind'; tmux new -d -s dexc 'dexc'" > ~/dcrdex.sh;`
+    echo "tmux new -d -s dcrd 'dcrd'; tmux new -d -s dcrwallet 'dcrwallet'; tmux new -d -s bitcoind 'bitcoind'; tmux new -d -s dexc 'dexc'" > ~/dcrdex.sh;
 
 Make it executable
 
-`chmod +x ~/dcrdex.sh`
+    chmod +x ~/dcrdex.sh
 
 You can start all daemons by running
 
-`~/dcrdex.sh`
+    ~/dcrdex.sh
 
 To check the status of the different processes you can attach the relevant session by using the following commands:
 
-* Decred full node: `tmux attach -t dcrd` 
+* Decred full node:
 
-* Bitcoin full node & Wallet: `tmux attach -t bitcoind`
+      tmux attach -t dcrd
 
-* DCRDEX client: `tmux attach -t dexc` 
+* Bitcoin full node & Wallet:
+
+      tmux attach -t bitcoind
+
+* DCRDEX client
  
-* Decred Wallet: `tmux attach -t dcrwallet` 
+      tmux attach -t dexc
+
+* Decred Wallet:
+
+      tmux attach -t dcrwallet
 
 When dcrwallet is started for the first time it will prompt to enter your passphrase.
 
