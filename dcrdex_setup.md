@@ -7,7 +7,7 @@ A few points to keep in mind before we get too carried away:
 *   DCR DEX currently requires clients to run full nodes of the supported chains - your system will require approximately ~25 GB of free space for trading DCR & BTC.
 *   Your full nodes will need to be online and synched before you can trade, bitcoind in particular can take several hours to a few days depending on your internet speed and hardware.
 *   [dex.decred.org](dex.decred.org) has a one-off registration fee of 1 DCR.
-*   The minimum trade size on [dex.decred.org](dex.decred.org) is currently set to 40 DCR to ensure on-chain fees are less than 1% of the trade on DCR/BTC.
+*   The minimum trade size on [dex.decred.org](dex.decred.org) is currently set to 40 DCR to ensure on-chain fees are less than 1% of the smallest possible trade on DCR/BTC.
 *   Since all trades are settled on-chain, they can take several hours to complete - your machine needs to stay online throughout this whole process.
 
 ## Prerequisites
@@ -55,16 +55,49 @@ Run it to install the Decred CLI tools, the DEX client and create your Decred wa
 
 `./dcrinstall-linux-amd64-v1.6.0 --dcrdex`
 
-During the creation process for your wallet, you will be given a sequence of 33 words known as a seed phrase. Write it down and store it in a safe place and **DO NOT SHARE IT WITH ANYONE**. For more information see the [Wallets & Seeds](https://docs.decred.org/faq/wallets-and-seeds/) section of the Decred documentation.
+As part of the wallet creation process, you will be given a sequence of 33 words known as a seed phrase. Write it down and store it in a safe place and **DO NOT SHARE IT WITH ANYONE**. For more information see the [Wallets & Seeds](https://docs.decred.org/faq/wallets-and-seeds/) section of the Decred documentation.
 
-Add the path to the Decred binaries to your `.profile`.
+Add the path to the Decred binaries to your `.profile` for easier management.
 
 `echo "PATH=~/decred:$PATH" >> ~/.profile && source ~/.profile`
 
 ## Configuration
 
-To make life easier, we can use tmux to manage multiple terminals - verify that you have it installed.
+To make life easier, we can use tmux to manage multiple terminal sessions - first, lets verify that you have it installed.
 
 `sudo apt-get install tmux`
 
+Now we'll create a bash script called dcrdex.sh which will start a tmux session for each application, starting dcrd, bitcoind, dcrwallet and dexc.
+
+`echo "tmux new -d -s dcrd 'dcrd'; tmux new -d -s dcrwallet 'dcrwallet'; tmux new -d -s bitcoind 'bitcoind'; tmux new -d -s dexc 'dexc'" > ~/dcrdex.sh;`
+
+Make it executable
+
+`chmod +x ~/dcrdex.sh`
+
+You can start all daemons by running
+
+`~/dcrdex.sh`
+
+To check the status of the different processes you can attach the relevant session by using the following commands:
+
+* Decred full node: `tmux attach -t dcrd` 
+
+* Bitcoin full node & Wallet: `tmux attach -t bitcoind`
+
+* DCRDEX client: `tmux attach -t dexc` 
+ 
+* Decred Wallet: `tmux attach -t dcrwallet` 
+
+When dcrwallet is started for the first time it will prompt to enter your passphrase.
+
+You can detach from tmux sessions by pressing **CTRL+B**, then **D**.
+
+At this point your nodes will be synching in the background and you will see messages like this in bitcoind:
+
+> 2021-02-16T19:30:03Z UpdateTip: new best=00000000000005212a4f8eadc418abfff2b81e906c80d6e39195aa1a04e4cc32 height=185627 version=0x00000001 log2_work=68.295222 tx=4369721 date='2012-06-21T20:32:25Z' progress=0.007177 cache=27.2MiB(166302txo)
+
+and this in dcrd:
+
+> 2021-02-16 19:30:51.014 [INF] BMGR: Processed 837 blocks in the last 11.16s (8863 transactions, 4305 tickets, 4143 votes, 73 revocations, height 130940, 2017-05-07 00:19:37 +0100 BST)
 
