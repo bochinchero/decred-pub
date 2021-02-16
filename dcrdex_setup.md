@@ -26,11 +26,13 @@ Once you're up and running with your system we can move on to the next steps.
 
 First lets open a terminal and ensure you are in the home folder:
 
+```
 cd ~
+```
 
-Get latest version of dcrinstall - if you are using an VPS/VM that would ussually be:  
+Get latest version of dcrinstall - if you are using an VPS/VM that would usually be:  
       
-wget https://github.com/decred/decred-release/releases/download/v1.6.0/dcrinstall-linux-amd64-v1.6.0
+`wget https://github.com/decred/decred-release/releases/download/v1.6.0/dcrinstall-linux-amd64-v1.6.0`
 
 For a raspberry pi you would use:
 
