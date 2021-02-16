@@ -21,7 +21,7 @@ If you don't know what you are doing, I'd suggest going with the virtual machine
 *   [How to create an Ubuntu VM on Windows 10 w/ Hyper-V](https://www.thomasmaurer.ch/2019/06/how-to-create-an-ubuntu-vm-on-windows-10/)
 *   [How to Install Ubuntu on VirtualBox](https://www.freecodecamp.org/news/how-to-install-ubuntu-with-oracle-virtualbox/)
 
-Once you're up and running we can move on to the next steps.
+As far as VM specs, I'd suggest at least 6GB of RAM, 2 cores and a 30 GB drive - it's also recommended that you have a swap partition of at least 2 GB. 
 
 ## Installation
 
