@@ -35,7 +35,9 @@ Import the Decred Release Signing Key in GnuPG.
 
 Download the installer, manifest, and signature files. If you are using a Raspberry Pi, you'll need the arm64 files instead.
 
-`wget https://github.com/decred/decred-release/releases/download/v1.6.0/{dcrinstall-linux-amd64-v1.6.0,manifest-dcrinstall-v1.6.0.txt,manifest-dcrinstall-v1.6.0.txt.asc}`
+`wget https://github.com/decred/decred-release/releases/download/v1.6.0/dcrinstall-linux-amd64-v1.6.0
+wget https://github.com/decred/decred-release/releases/download/v1.6.0/manifest-dcrinstall-v1.6.0.txt
+wget https://github.com/decred/decred-release/releases/download/v1.6.0/dcrinstall-v1.6.0-manifest.txt.asc`
 
 Verify the manifest. The output from this command should say “Good signature from Decred Release [**release@decred.org**](mailto:release@decred.org)”. Warnings about the key not being certified with a trusted signature can be ignored.
 
