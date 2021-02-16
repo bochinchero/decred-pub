@@ -24,13 +24,13 @@ Once you're up and running with we can move on to the next steps.
 
 ## Installation
 
-Once your machine is set up you will need to install the Decred CLI tools.
+Once your machine is set up we can start installing the Decred CLI tools.
 
 Import the Decred Release Signing Key in GnuPG.
 
 `gpg --keyserver pgp.mit.edu --recv-keys F516ADB7A069852C7C28A02D6D897EDF518A031D`
 
-Download the installer, manifest, and signature files.
+Download the installer, manifest, and signature files. Use arm64 instead of amd64 if you are using a Raspberry Pi.
 
 `wget https://github.com/decred/decred-release/releases/download/v1.6.0/{dcrinstall-linux-amd64-v1.6.0,manifest-dcrinstall-v1.6.0.txt,manifest-dcrinstall-v1.6.0.txt.asc}`
 
@@ -48,9 +48,17 @@ Make the binary executable.
 
 `chmod +x dcrinstall-linux-amd64-v1.6.0`
 
-Run it to install the Decred CLI tools and to create your wallet.
+Run it to install the Decred CLI tools, DEX client and to create your wallet.
 
-`./dcrinstall-linux-amd64-v1.6.0`
+`./dcrinstall-linux-amd64-v1.6.0 --dcrdex`
+
+``During the creation process for your wallet, you will be given a sequence of 33 words known as a seed phrase. This seed phrase is essentially the private key for your wallet. You will be able to use this seed phrase to restore your private keys, transaction history, and balances using any Decred wallet on any computer.
+
+This ultimately means that anyone who knows your seed can use it to restore your private keys, transaction history, and balances to a Decred wallet on their computer without your knowledge. For this reason, it is of utmost importance to keep your seed phrase safe. Treat this seed the same way you would treat a physical key to a safe. If you lose your seed phrase, you permanently lose access to your wallet and all funds within it. It cannot be recovered by anyone, including the Decred developers. It is recommended you write it down on paper and store that somewhere secure. If you decide to keep it on your computer, it would be best to keep it in an encrypted document (do not forget the password) in case the file or your computer is stolen.
+
+Every seed phrase is also associated with a 64 character seed hex. The seed hex functions the same way as the seed phrase, so it is also important to keep your seed hex secure.
+
+DO NOT, UNDER ANY CIRCUMSTANCES, GIVE YOUR SEED OR THE ASSOCIATED HEX KEY TO ANYONE! NOT EVEN DECRED DEVELOPERS!``
 
 Add the path to the Decred binaries to your `.profile`.
 
