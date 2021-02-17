@@ -1,10 +1,10 @@
-# The Hitchhiker's Guide to the DCR DEX
+# The Hitchhiker's Guide to the DCRDEX
 
-This is an attempt at a newbie-friendly and easy to follow installation and configuration guide for a DCR DEX client and required nodes.
+This is an attempt at a newbie-friendly and easy to follow installation and configuration guide for a DCRDEX client and required nodes.
 
 A few points to keep in mind before we get too carried away:
 
-*   DCR DEX currently requires clients to run full nodes of the supported chains - your system will require approximately ~25 GB of free space for trading DCR & BTC.
+*   DCRDEX currently requires clients to run full nodes of the supported chains - your system will require approximately ~25 GB of free space for trading DCR & BTC.
 *   Your full nodes will need to be online and synched before you can trade, bitcoind in particular can take several hours to a few days depending on your internet speed and hardware.
 *   [dex.decred.org](dex.decred.org) has a one-off registration fee of 1 DCR.
 *   The minimum trade size on [dex.decred.org](dex.decred.org) is currently set to 40 DCR to ensure on-chain fees are less than 1% of the smallest possible trade on DCR/BTC.
@@ -21,7 +21,9 @@ If you don't know what you are doing, I'd suggest going with the virtual machine
 *   [How to create an Ubuntu VM on Windows 10 w/ Hyper-V](https://www.thomasmaurer.ch/2019/06/how-to-create-an-ubuntu-vm-on-windows-10/)
 *   [How to Install Ubuntu on VirtualBox](https://www.freecodecamp.org/news/how-to-install-ubuntu-with-oracle-virtualbox/)
 
-As far as VM specs, I'd suggest at least 6GB of RAM, 2 cores and a 30 GB drive - it's also recommended that you have a swap partition of at least 2 GB. 
+As far as VM specs, I'd suggest at least 4GB of RAM, 2 cores and a 35 GB drive - it's also recommended that you have a swap partition of at least 2 GB.
+
+Something to keep in mind that your virtual machine will be as secure as the system that you are running it on.
 
 ## Installation
 
@@ -33,7 +35,7 @@ Import the Decred Release Signing Key in GnuPG.
 
     gpg --keyserver pgp.mit.edu --recv-keys F516ADB7A069852C7C28A02D6D897EDF518A031D
 
-### If you are using a dedicated computer or a virtual machine (amd64)
+#### If you are using a dedicated computer or a virtual machine (amd64)
 
 Download the installer, manifest, and signature files.
 
@@ -124,9 +126,9 @@ To check the status of the different processes you can attach the relevant sessi
 
       tmux attach -t dcrwallet
 
-When dcrwallet is started for the first time it will prompt to enter your passphrase.
+Attach the dcrwallet session, when it is started for the first time it will prompt to enter your passphrase.
 
-You can detach from tmux sessions by pressing **CTRL+B**, then **D**.
+You can detach from tmux sessions by pressing **CTRL + B**, then **D**.
 
 At this point your nodes will be synching in the background and you will see messages like this in bitcoind:
 
