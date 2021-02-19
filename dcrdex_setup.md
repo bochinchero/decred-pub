@@ -210,6 +210,7 @@ The dex client should already be running in the background.
 ![client-pw](https://github.com/decred/dcrdex/blob/master/docs/images/client-pw.png)
 
 * Connect to your Decred wallet. The client will auto-fill most of your wallet settings, but you will need to specify the account name, which we set up as **dex** above. Enter the wallet password, which is the dcrwallet passphrase you entered during the dcrinstall process and the DEX client app password you created in the previous step.
+
 ![decred-reg](https://github.com/decred/dcrdex/raw/master/docs/images/decred-reg.png)
 
 * Enter the dex address: **dex.decred.org**.
