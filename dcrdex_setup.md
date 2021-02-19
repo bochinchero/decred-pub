@@ -1,4 +1,4 @@
-# The Hitchhiker's Guide to the DCRDEX
+# A Guide to the DCRDEX
 
 This is an attempt at a more newbie friendly and easy to follow installation and configuration guide for a DCRDEX client and required nodes.
 
