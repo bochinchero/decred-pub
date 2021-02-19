@@ -27,7 +27,7 @@ As far as machine specifications go, I'd suggest as a minimum 4GB of RAM, 2 core
 
 A machine with these specifications took about 2 days to synch the bitcoin blockchain, better specs will considerably speed this up.
 
-Something else to keep in mind that your virtual machine will be as secure as the host system that you are running it on.
+Something else to keep in mind that your **virtual machine will be as secure as the host system that you are running it on**. Consider using a dedicated computer if you are planning on trading and/or holding a significant amount of funds in these wallets for an extended period of time.
 
 ## Installation
 
