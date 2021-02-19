@@ -1,4 +1,4 @@
-# A Guide to the DCRDEX
+# The Hitchhiker's Guide to the DCRDEX
 
 This is an attempt at a more newbie friendly and easy to follow installation and configuration guide for a DCRDEX client and required nodes.
 
@@ -35,6 +35,10 @@ With your machine set up, we can start installing the Decred CLI tools.
 
 Open a terminal window by pressing **Ctrl + Alt + T**
 
+Ensure you're in your home folder.
+
+    cd ~
+
 Import the Decred Release Signing Key in GnuPG.
 
     gpg --keyserver pgp.mit.edu --recv-keys F516ADB7A069852C7C28A02D6D897EDF518A031D
@@ -58,7 +62,7 @@ Verify the SHA-256 hash in the manifest matches that of the binary - the followi
 Make the binary executable.
 
     chmod +x dcrinstall-linux-amd64-v1.6.0
-huge
+
 Run it to install the Decred CLI tools, the DEX client and create your Decred wallet.
 
     ./dcrinstall-linux-amd64-v1.6.0 --dcrdex
@@ -89,7 +93,7 @@ Run it to install the Decred CLI tools, the DEX client and create your Decred wa
 
 ### Decred Wallet Creation
 
-A Decred wallet will be created as part of the decred installation process, you will be given a sequence of 33 words known as a seed phrase. Write it down and store it in a safe place and **DO NOT SHARE IT WITH ANYONE**. For more information see the [Wallets & Seeds](https://docs.decred.org/faq/wallets-and-seeds/) section of the Decred documentation.
+A Decred wallet will be created as part of the installation process, you will be given a sequence of 33 words known as a seed phrase. Write it down and store it in a safe place and **DO NOT SHARE IT WITH ANYONE**. For more information see the [Wallets & Seeds](https://docs.decred.org/faq/wallets-and-seeds/) section of the Decred documentation.
 
 ## Configuration and Registration
 
@@ -131,7 +135,7 @@ To check the status of the different processes you can attach the relevant sessi
 
       tmux attach -t dcrwallet
 
-Attach the dcrwallet session, when it starts for the first time it will prompt to enter your passphrase.
+Attach the dcrwallet, when it starts for the first time it will prompt to enter your passphrase.
 
 You can detach from tmux sessions by pressing **CTRL + B**, then **D**.
 
