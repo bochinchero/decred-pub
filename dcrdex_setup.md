@@ -103,6 +103,7 @@ Add the path to the Decred binaries to your `.profile` for easier management.
 
 To make life easier, you can use tmux to manage multiple terminal sessions - first, lets verify that you have it installed.
 
+    sudo apt-get update
     sudo apt-get install tmux
 
 Now we'll create a bash script called dcrdex.sh which will start a tmux session for each application, starting dcrd, bitcoind, dcrwallet and dexc.
