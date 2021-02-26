@@ -15,7 +15,7 @@ A few points to keep in mind before going any further:
 
 In order to trade on the DEX client you will be essentially running hot wallets. As such, it is recommended that you use a dedicated system specific for this task. 
 
-This can be done by using dedicated computer, a virtual machine or even a Raspberry Pi, with the caveat that on the latter you [would want to boot from an SSD](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md) since SD cards degrade over time and will eventually fail.
+This can be done by a virtual machine, a dedicated computer or even a Raspberry Pi, with the caveat that on the latter you [would want to boot from an SSD](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md) since SD cards degrade over time and will eventually fail.
 
 If you don't know what you are doing, I'd suggest going with the virtual machine route - below are some tutorials for Ubuntu which is relatively newbie friendly.
 
