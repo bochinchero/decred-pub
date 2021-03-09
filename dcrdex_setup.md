@@ -17,17 +17,11 @@ In order to trade on the DEX client you will be essentially running hot wallets.
 
 This can be done by a virtual machine, a dedicated computer or even a Raspberry Pi, with the caveat that on the latter you [would want to boot from an SSD](https://www.raspberrypi.org/documentation/hardware/raspberrypi/bootmodes/msd.md) since SD cards degrade over time and will eventually fail.
 
-If you don't know what you are doing, I'd suggest going with the virtual machine route - below are some tutorials for Ubuntu which is relatively newbie friendly.
-
-*   [How to install Ubuntu on Windows 10 using WSL](https://ubuntu.com/tutorials/ubuntu-on-windows#1-overview)
-*   [How to create an Ubuntu VM on Windows 10 w/ Hyper-V](https://www.thomasmaurer.ch/2019/06/how-to-create-an-ubuntu-vm-on-windows-10/)
-*   [How to Install Ubuntu on VirtualBox](https://www.freecodecamp.org/news/how-to-install-ubuntu-with-oracle-virtualbox/)
-
 As far as machine specifications go, I'd suggest as a minimum 4GB of RAM, 2 cores and a 35 GB drive - it's also recommended that you have a swap partition of at least 2 GB.
 
-A machine with these specifications took about 2 days to synch the bitcoin blockchain, better specs will considerably speed this up.
+A machine with these specifications took about 2 days to syncronise the bitcoin blockchain, better specs will considerably speed this up.
 
-Something else to keep in mind that your **virtual machine will be as secure as the host system that you are running it on**. Consider using a dedicated computer if you are planning on trading and/or holding a significant amount of funds in these wallets for an extended period of time.
+Something else to keep in mind,  if you are using a virtual machine **it will only be as secure as the host system that you are running it on**. Consider using a dedicated computer if you are planning on trading and/or holding a significant amount of funds in these wallets for an extended period of time.
 
 ## Installation
 
